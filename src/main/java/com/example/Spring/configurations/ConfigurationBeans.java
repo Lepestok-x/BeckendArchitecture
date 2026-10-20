@@ -6,12 +6,12 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
-public class ConfigurationSecurity {
+public class ConfigurationBeans {
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) {
         return httpSecurity.csrf(AbstractHttpConfigurer::disable)
             .authorizeHttpRequests(auth -> auth.anyRequest().permitAll())
             .build();
     }
-
 }
