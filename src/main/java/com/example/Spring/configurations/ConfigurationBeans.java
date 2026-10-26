@@ -7,7 +7,6 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 public class ConfigurationBeans {
-
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) {
         return httpSecurity.csrf(AbstractHttpConfigurer::disable)

@@ -8,6 +8,7 @@ import com.example.Spring.services.CustomersWriteService;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
 import jakarta.validation.ValidatorFactory;
+import net.datafaker.Faker;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Tag;
@@ -46,7 +47,7 @@ class ApplicationTests {
         Customers after = new Customers();
         Customers before = new Customers();
         after.setId(1L);
-        when(customerMapper.saveCustomer(customersDTO)).thenReturn(before);
+        when(customerMapper.writeCustomer(customersDTO)).thenReturn(before);
         when(customersRepository.save(any(Customers.class))).thenReturn(after);
         assertDoesNotThrow(() -> writeService.saveCustomer(customersDTO));
         verify(customersRepository).save(before);

@@ -1,5 +1,6 @@
 package com.example.Spring.database;
 
+import com.example.Spring.dto.CustomersDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -28,6 +29,14 @@ public class Customers {
           this.city = city;
           this.postalCode = postalCode;
           this.country = country;
+    }
+    // Тут сразу передаем дто класс, не плодя аргументами.
+    public Customers(CustomersDTO dto) {
+        this.contactName = dto.contactName();
+        this.address = dto.address();
+        this.city = dto.city();
+        this.postalCode = dto.postalCode();
+        this.country = dto.country();
     }
     public Customers() {} // No args
 

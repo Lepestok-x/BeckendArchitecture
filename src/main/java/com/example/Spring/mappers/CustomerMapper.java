@@ -7,5 +7,5 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "string")
 public interface CustomerMapper {
     CustomersDTO toDTO(Customers customers);
-    Customers saveCustomer(CustomersDTO customersDTO);
+    Customers writeCustomer(CustomersDTO customersDTO);
 }
